@@ -1,0 +1,88 @@
+#timeline {
+  display: grid;
+  align-content: center;
+}
+#timeline > ul {
+  display: grid;
+  margin-left:-20px;
+  grid-template-columns: 0.25rem 1fr;
+  grid-auto-columns: max-content;
+  column-gap: 2rem;
+  list-style: none;
+}
+#timeline > ul::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: rgb(225, 225, 225);
+  border-radius: 0.125rem;
+}
+#timeline > ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+ #timeline ul li {
+  grid-column: 2;
+  margin-inline: 1.5rem;
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+ #timeline ul li .date {
+  height: 3rem;
+  margin-inline: -1.5rem;
+
+  text-align: center;
+  
+background-color: #20a4f3 ;
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: 1.5rem;
+}
+
+#timeline ul li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: rgba(245, 245, 245);
+  border: 0.3rem solid #20a4f3 ;  
+border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + 2rem + 0.25rem /2);
+}
+
+ #timeline ul li .title,
+ #timeline ul li .descr {
+  background: rgba(245, 245, 245);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+ #timeline ul li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+}
+ #timeline ul li .descr {
+  padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+ #timeline ul li .title::before {
+  bottom: 12.5rem;
+}
+
+ #timeline ul li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
